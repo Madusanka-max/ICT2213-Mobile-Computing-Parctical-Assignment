@@ -13,7 +13,7 @@
         android:theme="@style/Theme.Madusanka">
         
         <activity
-            android:name=".MainActivity"
+            android:name=".LandingActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,6 +21,7 @@
             </intent-filter>
         </activity>
         
+        <activity android:name=".MainActivity" />
         <activity android:name=".FrameActivity" />
         <activity android:name=".ConstraintActivity" />
         <activity android:name=".RelativeActivity" />

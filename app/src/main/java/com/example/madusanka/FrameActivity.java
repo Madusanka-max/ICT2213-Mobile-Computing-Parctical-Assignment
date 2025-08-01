@@ -3,29 +3,31 @@ package com.example.madusanka;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
-import android.widget.ImageView;
+
 import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class FrameActivity extends AppCompatActivity {
-    private ImageView profileImage;
-    private TextView welcomeText;
+    private TextView welcomeText1;
+    private TextView welcomeText2;
     private Button editProfileButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getWindow().setFlags(android.view.WindowManager.LayoutParams.FLAG_FULLSCREEN, android.view.WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_frame);
 
-        profileImage = findViewById(R.id.profileImage);
-        welcomeText = findViewById(R.id.welcomeText);
+        welcomeText1 = findViewById(R.id.welcomeText1);
+        welcomeText2 = findViewById(R.id.welcomeText1);
         editProfileButton = findViewById(R.id.editProfileButton);
 
         String userName = getIntent().getStringExtra("USER_NAME");
         if (userName != null && !userName.isEmpty()) {
-            welcomeText.setText("Welcome, " + userName + "!");
+            welcomeText1.setText("Welcome");
+            welcomeText2.setText( ""+ userName);
         }
 
         editProfileButton.setOnClickListener(v -> 

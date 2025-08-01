@@ -17,6 +17,7 @@ public class RelativeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getWindow().setFlags(android.view.WindowManager.LayoutParams.FLAG_FULLSCREEN, android.view.WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_relative);
 
         dashboardText = findViewById(R.id.dashboardText);

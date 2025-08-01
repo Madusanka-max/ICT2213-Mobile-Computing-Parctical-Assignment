@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/dark_bg">
+
+    <!-- Animated Background Elements -->
+    <View
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:background="@drawable/me"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp" />
+
+
+
+    <!-- Main Content -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:paddingTop="60dp"
+    android:paddingBottom="20dp"
+    android:paddingLeft="40dp"
+    android:paddingRight="40dp">
+
+        <!-- Logo Section -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_marginBottom="40dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="◆ MADUSANKA ◆"
+                android:textSize="42sp"
+                android:textStyle="bold"
+                android:textColor="@color/neon_cyan"
+                android:letterSpacing="0.15"
+                android:layout_marginBottom="8dp" />
+
+            <View
+                android:layout_width="200dp"
+                android:layout_height="2dp"
+                android:background="@color/neon_purple"
+                android:layout_marginBottom="16dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="NEXT-GEN INTERFACE"
+                android:textSize="14sp"
+                android:textColor="@color/text_secondary"
+                android:letterSpacing="0.4"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="━━━ POWERED BY QUANTUM TECH ━━━"
+                android:textSize="10sp"
+                android:textColor="@color/neon_green"
+                android:letterSpacing="0.2" />
+
+        </LinearLayout>
+
+        <!-- Action Section -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/enterButton"
+                android:layout_width="240dp"
+                android:layout_height="65dp"
+                android:text="► INITIALIZE SYSTEM"
+                android:textColor="@color/dark_bg"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:background="@drawable/futuristic_button"
+                android:letterSpacing="0.1"
+                android:layout_marginBottom="24dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="[ PRESS TO CONTINUE ]"
+                android:textSize="12sp"
+                android:textColor="@color/text_hint"
+                android:letterSpacing="0.3"
+                android:layout_marginBottom="40dp" />
+
+        </LinearLayout>
+
+        <!-- Status Indicators -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <View
+                android:layout_width="8dp"
+                android:layout_height="8dp"
+                android:background="@color/success"
+                android:layout_marginEnd="8dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SYSTEM ONLINE"
+                android:textSize="10sp"
+                android:textColor="@color/success"
+                android:letterSpacing="0.2"
+                android:layout_marginEnd="24dp" />
+
+            <View
+                android:layout_width="8dp"
+                android:layout_height="8dp"
+                android:background="@color/neon_cyan"
+                android:layout_marginEnd="8dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="READY"
+                android:textSize="10sp"
+                android:textColor="@color/neon_cyan"
+                android:letterSpacing="0.2" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

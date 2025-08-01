@@ -3,93 +3,157 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@drawable/background"
-    android:padding="16dp">
+    android:background="@color/dark_bg"
+    android:padding="24dp">
 
     <Button
         android:id="@+id/backButton"
         android:layout_width="48dp"
         android:layout_height="48dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
         android:text="←"
         android:textSize="20sp"
-        android:layout_marginTop="100dp"
-        android:backgroundTint="@color/gray_300"
-        android:textColor="#000" />
+        android:backgroundTint="@color/dark_surface"
+        android:textColor="@color/neon_cyan" />
 
     <TextView
         android:id="@+id/dashboardText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
+        android:text="DASHBOARD"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:textColor="@color/neon_cyan"
+        android:letterSpacing="0.1"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="200dp"
-        android:text="Dashboard"
-        android:textColor="#FFFFFF"
-        android:textSize="24sp"
-        android:textStyle="bold" />
+        android:layout_marginTop="100dp" />
 
-    <TextView
-        android:id="@+id/notificationsText"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/statusLayout"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/dashboardText"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="32dp"
-        android:text="Notifications"
-        android:textColor="#FFFFFF"
-        android:textSize="18sp" />
+        android:layout_marginTop="40dp"
+        android:orientation="horizontal"
+        android:background="@color/dark_surface"
+        android:padding="20dp">
 
-    <TextView
-        android:id="@+id/accountStatusText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/dashboardText"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="32dp"
-        android:text="Account Status"
-        android:textColor="#FFFFFF"
-        android:textSize="18sp" />
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <View
+                android:layout_width="4dp"
+                android:layout_height="20dp"
+                android:background="@color/neon_green"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:id="@+id/notificationsText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="NOTIFICATIONS"
+                android:textSize="14sp"
+                android:textColor="@color/text_secondary"
+                android:letterSpacing="0.1" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="end">
+
+            <View
+                android:layout_width="4dp"
+                android:layout_height="20dp"
+                android:background="@color/neon_orange"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:id="@+id/accountStatusText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ACCOUNT STATUS"
+                android:textSize="14sp"
+                android:textColor="@color/text_secondary"
+                android:letterSpacing="0.1" />
+
+        </LinearLayout>
+
+    </LinearLayout>
 
     <EditText
         android:id="@+id/searchEditText"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Search..."
-        android:textColorHint="@color/gray_500"
-        android:backgroundTint="@color/gray_400"
-        android:layout_below="@id/notificationsText"
-        android:layout_marginTop="32dp" />
+        android:layout_height="50dp"
+        android:layout_below="@id/statusLayout"
+        android:layout_marginTop="32dp"
+        android:hint="SEARCH..."
+        android:textColor="@color/text_primary"
+        android:textColorHint="@color/text_hint"
+        android:background="@color/dark_card"
+        android:padding="16dp" />
 
-    <Button
-        android:id="@+id/viewProfileButton"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/buttonLayout"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="View Profile"
-        android:backgroundTint="@color/accent_blue"
-        android:textColor="@color/white"
         android:layout_below="@id/searchEditText"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="32dp" />
+        android:layout_marginTop="32dp"
+        android:orientation="horizontal"
+        android:gravity="center">
 
-    <Button
-        android:id="@+id/settingsButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Settings"
-        android:backgroundTint="@color/gray_400"
-        android:textColor="@color/gray_800"
-        android:layout_below="@id/searchEditText"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="32dp" />
+        <Button
+            android:id="@+id/viewProfileButton"
+            android:layout_width="140dp"
+            android:layout_height="50dp"
+            android:text="VIEW PROFILE"
+            android:backgroundTint="@color/neon_purple"
+            android:textColor="@color/text_primary"
+            android:textStyle="bold"
+            android:layout_marginEnd="16dp" />
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottomNavigation"
+        <Button
+            android:id="@+id/settingsButton"
+            android:layout_width="140dp"
+            android:layout_height="50dp"
+            android:text="SETTINGS"
+            android:backgroundTint="@color/dark_card"
+            android:textColor="@color/text_secondary"
+            android:layout_marginStart="16dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:background="@color/gray_200"
-        app:itemIconTint="@color/accent_blue"
-        app:itemTextColor="@color/gray_700"
-        app:menu="@menu/bottom_nav_menu" />
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/neon_cyan"
+            android:alpha="0.6" />
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottomNavigation"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:background="@color/dark_surface"
+            android:elevation="8dp"
+            app:itemIconTint="@color/neon_cyan"
+            app:itemTextColor="@color/text_secondary"
+            app:itemBackground="@drawable/nav_item_selector"
+            app:itemActiveIndicatorStyle="@null"
+            app:labelVisibilityMode="labeled"
+            app:menu="@menu/bottom_nav_menu" />
+    </LinearLayout>
 
 </RelativeLayout>

@@ -10,19 +10,28 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 public class MainActivity extends AppCompatActivity {
     private EditText editTextName, editTextAge;
     private BottomNavigationView bottomNavigation;
+    private StudentDatabaseHelper dbHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getWindow().setFlags(android.view.WindowManager.LayoutParams.FLAG_FULLSCREEN, android.view.WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main);
 
         editTextName = findViewById(R.id.editTextName);
         editTextAge = findViewById(R.id.editTextAge);
         bottomNavigation = findViewById(R.id.bottomNavigation);
+        dbHelper = new StudentDatabaseHelper(this);
 
         bottomNavigation.setOnItemSelectedListener(item -> {
             Intent intent;
-            String name = editTextName.getText().toString();
+            String name = editTextName.getText().toString().trim();
+            String age = editTextAge.getText().toString().trim();
+            
+            // Save user data if both fields are filled
+            if (!name.isEmpty() && !age.isEmpty()) {
+                dbHelper.saveUser(name, age);
+            }
             
             if (item.getItemId() == R.id.nav_frame) {
                 intent = new Intent(MainActivity.this, FrameActivity.class);
